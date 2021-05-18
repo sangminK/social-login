@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>로그인</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!-- 소셜 아이콘 -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<!-- 네이버 -->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+/* 가운데 정렬 */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.content {
+  padding: 3rem;
+  border-radius: 1rem;
+}
+
+/* 소셜 로그인 아이콘 */
+.btn-social-login {
+  transition: all .2s;
+  outline: 0;
+  border: 1px solid transparent;
+  padding: .5rem !important;
+  border-radius: 50%;
+  color: #fff;
+}
+.btn-social-login:focus {
+  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+.text-dark { color: #343a40!important; }
+
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="content">
+        <h1>로그인</h1>
+        <input type="text" style="width: 100%" class="form-control" placeholder="아이디"><br>
+        <input type="text" style="width: 100%" class="form-control" placeholder="비밀번호">
+
+        <div style="font-size: 11px;">
+            <input type="checkbox">
+            <label>아이디 저장</label>
+            <div style="float: right;">
+                <a>아이디 찾기</a> | <a>비밀번호 찾기</a> | <a>회원가입</a>
+            </div>
+        </div>
+
+        <div>
+            <button type="button" style="width: 100%">로그인</button>
+        </div>
+
+        <div>
+            <a th:href="${apiURL}">네이버</a>
+
+            <button class='btn-social-login' style='background:#1FC700'><i class="xi-3x xi-naver"></i></button>
+            <button class='btn-social-login' style='background:#D93025'><i class="xi-3x xi-google"></i></button>
+            <button class='btn-social-login' style='background:#4267B2'><i class="xi-3x xi-facebook"></i></button>
+            <button class='btn-social-login' style='background:#55ACEE'><i class="xi-3x xi-twitter"></i></button>
+            <button class='btn-social-login' style='background:#24292E'><i class="xi-3x xi-github"></i></button>
+            <button class='btn-social-login' style='background:#FFEB00'><i class="xi-3x xi-kakaotalk text-dark"></i></button>
+            <!-- TODO : 애플 로그인 -->
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
